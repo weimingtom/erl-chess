@@ -1,0 +1,9 @@
+#Sat Apr 05 23:04:51 CST 2008
+output_dir=ebin
+otp_project_structure=false
+external_includes=
+use_pathz=true
+include_dirs=include
+external_modules=
+backend_name=
+source_dirs=src
