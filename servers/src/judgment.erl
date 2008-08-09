@@ -4,7 +4,7 @@
 
 start() ->
     judgment_keyserver:start_link(judgment_keyserver),
-    {ok, Listen} = gen_tcp:listen(8006, [binary, {packet, 4}]),
+    {ok, Listen} = gen_tcp:listen(8005, [binary, {packet, 4}]),
     spawn(fun() -> listen(Listen) end).
 
 listen(Listen) ->
