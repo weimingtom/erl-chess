@@ -1,22 +1,43 @@
 =judgment=
+
 cd("/home/hantuo/www/game/chess/servers/ebin").
+
 socket_wraper:start().
+
 judgment:start().
+
 =ai comput node=
+
 cd("/home/hantuo/www/game/chess/servers/ebin").
+
 ai_serverlist:start_link().
+
 wigth:start_link().
+
 inets:start().
+
 httpd:start("httpd.conf").
+
+
 
 =ai http server=
+
 cd("/home/hantuo/www/game/chess/servers/ebin").
+
 inets:start().
+
 httpd:start("httpd.conf").
+
 =adapter=
+
 cd("/home/hantuo/www/game/chess/servers/ebin").
+
 inets:start().
+
 ai_adapter:start("fffaaa", "127.0.0.1", 8006, 1, "http://127.0.0.1:8007/chess/ai/get").
 
+
+
 =client=
+
 http://192.168.48.235/game/chess/client/chess.html
