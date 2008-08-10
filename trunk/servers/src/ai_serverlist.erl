@@ -111,7 +111,7 @@ code_change(_OldVsn, State, _Extra) ->
 %%% Internal functions
 %%--------------------------------------------------------------------
 reload() ->
-    [t1@hantuo, t2@hantuo, t3@hantuo].
+    [t1@ht].
 
 loop() ->
     receive
