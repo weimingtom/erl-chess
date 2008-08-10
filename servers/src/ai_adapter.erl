@@ -6,7 +6,12 @@
 
 start(Key, IP, Port, Flag, URL) -> 
 	case gen_tcp:connect(IP, Port, [binary, {packet, 4}], 10 * 1000) of
-    	{ok, Socket} -> gen_tcp:send(Socket, list_to_binary([0, 0, 0, Flag] ++ Key)), listen(Socket, Flag, URL);
+    	{ok, Socket} -> 
+            Flag1 = if
+        		Flag =:= 2 -> 1;
+           	 	Flag =:= 1 -> -1
+        	end,
+            gen_tcp:send(Socket, list_to_binary([0, 0, 0, Flag] ++ Key)), listen(Socket, Flag1, URL);
     	{error, Why} -> io:format("connect faild, cause : ~p~n", [Why])
     end.
 

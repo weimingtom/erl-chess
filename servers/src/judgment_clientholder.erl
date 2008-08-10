@@ -186,10 +186,10 @@ request_move(Bin_t, Partner_name, Socket_self, Key, true) ->
     end;
 request_move(_Bin_t, _Partner_name, _Socket_self, _Key, Turn) -> {Turn}.
     
-is_win(Map, Flag, {X, Y}) ->
+is_win(Map, Flag, {_X, _Y}) ->
     Jiang = where_is_jiang(Map, -Flag),
-    case chessmap:position({X, Y}) of 
-        Jiang -> true;
+    case Jiang of 
+        null -> true;
         _Other -> is_siqi(Map, Flag)
     end.
 
