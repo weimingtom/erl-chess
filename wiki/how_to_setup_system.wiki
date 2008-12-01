@@ -1,10 +1,17 @@
-=judgment=
+=如何尝试着运行系统?=
 
-cd("/home/hantuo/www/game/chess/servers/ebin").
+=1.运行judgment=
 
-socket_wraper:start().
+进入编译目标目录(*.beam文件在此)
+如:cd("/home/hantuo/www/game/chess/servers/ebin").
 
-judgment:start().
+启动flash套接字包装器
+如:socket_wraper:start(8006, "127.0.0.1", 8005).
+其实三个参数分别为:本地端口,远程服务器IP,远程服务器端口.这里的远程服务器为下面提到的裁判服务器.
+
+启动裁判服务器
+judgment:start(8005).
+参数为端口号.这个裁判服务器为通用套接字服务器.
 
 =ai comput node=
 
