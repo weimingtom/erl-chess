@@ -85,10 +85,15 @@ httpd:start("httpd.conf").
 运行ai客户户
 ai_adapter:start("fffaaa", "127.0.0.1", 8006, 1, "http://127.0.0.1:8007/chess/ai/get").
 参数说明:
+
 1.key:string
+
 2.裁判服务器IP:string
+
 3.端口port:int
+
 4.模式:int(0 | 1),0为主机模式,1为从机模式.
+
 5.ai server位置:string.
 
 ===至此一个ai的client已经可以使用,如果使用主机模式,便可以使用一个flash客户端与之连接了.当然,也可以启动另外一个ai client,从而使电脑对电脑下棋===
