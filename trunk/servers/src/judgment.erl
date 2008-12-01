@@ -2,9 +2,9 @@
 -compile(export_all).
 -import(chessmap).
 
-start() ->
+start(Port) ->
     judgment_keyserver:start_link(judgment_keyserver),
-    {ok, Listen} = gen_tcp:listen(8005, [binary, {packet, 4}]),
+    {ok, Listen} = gen_tcp:listen(Port, [binary, {packet, 4}]),
     spawn(fun() -> listen(Listen) end).
 
 listen(Listen) ->
