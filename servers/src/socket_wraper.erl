@@ -15,15 +15,16 @@
 %%
 %% API Functions
 %%
-start() ->
-    {ok, Listen} = gen_tcp:listen(8006, [binary, {packet, 0}]),
-    spawn(fun() -> listen(Listen) end).
+start(LocalPort, RemoteIP, RemotePort) ->
+    {ok, Listen} = gen_tcp:listen(LocalPort, [binary, {packet, 0}]),
+    spawn(fun() -> listen(RemoteIP, RemotePort, Listen) end).
 
-listen(Listen) ->
+listen(RemoteIP, RemotePort, Listen) ->
     {ok, Socket} = gen_tcp:accept(Listen),
-    spawn(fun() -> listen(Listen) end),
-    {ok, Socket1} = gen_tcp:connect("127.0.0.1", 8005, [binary, {packet, 0}]),
+    spawn(fun() -> listen(RemoteIP, RemotePort, Listen) end),
+    {ok, Socket1} = gen_tcp:connect(RemoteIP, RemotePort, [binary, {packet, 0}]),
 	loop(Socket, Socket1).
+
 
 loop(Socket, Socket1) ->
     receive

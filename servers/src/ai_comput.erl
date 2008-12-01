@@ -43,11 +43,11 @@ comput_normal_wait(Num, Flag, {M, N}) ->
         time_out -> time_out;
         no_server -> no_server;
         {M1, N1} -> 
-                {M2, N2} = if 
-                    (N1 - N) * Flag >= 0 -> {M1, N1};
-                    true -> {M, N}
-                end,
-        comput_normal_wait(Num - 1, Flag, {M2, N2})
+            {M2, N2} = if 
+                (N1 - N) * Flag >= 0 -> {M1, N1};
+                true -> {M, N}
+            end,
+        	comput_normal_wait(Num - 1, Flag, {M2, N2})
     after 60 * 1000 ->
         time_out
     end.
