@@ -80,7 +80,6 @@ httpd:start("httpd.conf").
 
 inets:start().
 
-httpd:start("httpd.conf").
 
 运行ai客户户
 ai_adapter:start("fffaaa", "127.0.0.1", 8006, 1, "http://127.0.0.1:8007/chess/ai/get").
