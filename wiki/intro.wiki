@@ -4,3 +4,7 @@
 本程序为一个使用erlang + flash编写的象棋系统,可以实现人-人下棋,人-机下棋等功能.
 
 ==snapshot==
+
+http://code.google.com/p/erl-chess/source/browse/wiki/1.jpg
+http://code.google.com/p/erl-chess/source/browse/wiki/2.jpg
+http://code.google.com/p/erl-chess/source/browse/wiki/3.jpg
