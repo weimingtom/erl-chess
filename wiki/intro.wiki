@@ -5,6 +5,6 @@
 
 ==snapshot==
 
-http://code.google.com/p/erl-chess/source/browse/wiki/1.jpg
-http://code.google.com/p/erl-chess/source/browse/wiki/2.jpg
-http://code.google.com/p/erl-chess/source/browse/wiki/3.jpg
+http://erl-chess.googlecode.com/svn/wiki/1.jpg
+http://erl-chess.googlecode.com/svn/wiki/2.jpg
+http://erl-chess.googlecode.com/svn/wiki/3.jpg
