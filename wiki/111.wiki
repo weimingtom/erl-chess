@@ -1,5 +1,0 @@
-=judgment=
-=ai comput node=
-=ai http server=
-=adapter=
-=client=
